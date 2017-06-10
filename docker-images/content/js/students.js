@@ -1,17 +1,17 @@
 $(function() {
-   console.log("Loading students");
+   console.log("Loading cities");
 
-   function loadStudents() {
-      $.getJSON( "/api/students/", function( students ) {
-         console.log(students);
-         var message = "Nobody is here";
-         if( students.length > 0) {
-            message = students[0].firstName + " " + students[0].lastName;
+   function loadCities() {
+      $.getJSON( "/api/students/", function( cities ) {
+         console.log(cities);
+         var message = "No city is here";
+         if( cities.length > 0) {
+            message = cities[0].city + " " + cities[0].hashtag;
          }
          $("#welcome").text(message);
       });
    };
 
-   loadStudents();
-   setInterval( loadStudents, 2000);
+   loadCities();
+   setInterval( loadCities, 2000);
 });
